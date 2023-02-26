@@ -1,7 +1,7 @@
 Vue.createApp({
     data() {
         return {
-            data: [
+            teachers: [
                 { id: 1, name: "Anders", salary: 1234, address: "Roskilde" },
                 { id: 2, name: "Peter", salary: 2222, address: "Roskilde" },
                 { id: 3, name: "Morten", salary: 1244, address: "Ringsted" }

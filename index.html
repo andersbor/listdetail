@@ -18,14 +18,14 @@
         <h2>HTML
             <a href="https://www.w3schools.com/tags/tag_details.asp">details</a> element
         </h2>
-        <details v-for="t in data">
+        <details v-for="t in teachers">
             <summary>{{t.name}}</summary>
             <span class="px-5">{{t.salary}} {{t.address}}</span>
         </details>
 
         <h2>Ordinary list</h2>
         <ul>
-            <li v-for="teacher in data">
+            <li v-for="teacher in teachers">
                 <span v-on:click="clicked(teacher.id)">{{teacher.name}}</span>
             </li>
         </ul>
@@ -35,7 +35,7 @@
             {{selected}}
             <div>
                 <label for="nameInput">Name</label>
-                <input id="nameInput" placeholder="Enter name" v-model.lazy="selected.name">
+                <input id="nameInput" placeholder="Enter name" v-model="selected.name">
                 <button v-on:click="update(selected.id)" class="btn btn-primary">Update</button>
             </div>
         </div>
