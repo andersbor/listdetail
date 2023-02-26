@@ -4,17 +4,16 @@ Vue.createApp({
             teachers: [
                 { id: 1, name: "Anders", salary: 1234, address: "Roskilde" },
                 { id: 2, name: "Peter", salary: 2222, address: "Roskilde" },
-                { id: 3, name: "Morten", salary: 1244, address: "Ringsted" }
+                { id: 3, name: "Morten", salary: 1244, address: "Ringsted" },
+                { id: 4, name: "Vibeke", salary: 4562, address: "Valby" }
             ],
-            selected: null,
-            anotherName: null
+            selected: null
         }
     },
     methods: {
-
         clicked(id) {
             console.log("clicked id: " + id)
-            element = this.data.find(element => element.id == id)
+            element = this.teachers.find(element => element.id == id)
             if (element == null) {
                 this.selected = null
             } else {
@@ -25,8 +24,8 @@ Vue.createApp({
         update(id) {
             console.log("update id, name " + id + " " + this.selected.name)
             // https://linuxhint.com/update-object-in-javascript/
-            index = this.data.findIndex(element => element.id == id)
-            this.data[index].name = this.selected.name
+            index = this.teachers.findIndex(element => element.id == id)
+            this.teachers[index].name = this.selected.name
         }
     }
 }).mount("#app")
