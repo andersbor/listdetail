@@ -22,9 +22,9 @@ Vue.createApp({
             }
         },
         update(id) {
-            console.log("update id, name " + id + " " + this.selected.name)
+            //console.log("update id, name " + id + " " + this.selected.name)
             // https://linuxhint.com/update-object-in-javascript/
-            index = this.teachers.findIndex(element => element.id == id)
+            index = this.teachers.findIndex(element => element.id == this.selected.id)
             this.teachers[index].name = this.selected.name
         }
     }
